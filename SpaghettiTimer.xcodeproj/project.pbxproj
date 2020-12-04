@@ -13,6 +13,11 @@
 		5B052E9C2579DB54000036CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B052E9A2579DB54000036CA /* Main.storyboard */; };
 		5B052E9E2579DB55000036CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B052E9D2579DB55000036CA /* Assets.xcassets */; };
 		5B052EA12579DB55000036CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B052E9F2579DB55000036CA /* LaunchScreen.storyboard */; };
+		5B052EAA2579E33E000036CA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B052EA92579E33E000036CA /* TableViewCell.swift */; };
+		5B052EAD2579E4B3000036CA /* river3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B052EAC2579E4B3000036CA /* river3.jpg */; };
+		5B052EB02579E4BD000036CA /* river1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B052EAF2579E4BD000036CA /* river1.jpg */; };
+		5B052EB32579E4C2000036CA /* river2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B052EB22579E4C2000036CA /* river2.jpg */; };
+		5B052EB62579F34C000036CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B052EB52579F34C000036CA /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		5B052E9D2579DB55000036CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B052EA02579DB55000036CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B052EA22579DB55000036CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B052EA92579E33E000036CA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5B052EAC2579E4B3000036CA /* river3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = river3.jpg; sourceTree = "<group>"; };
+		5B052EAF2579E4BD000036CA /* river1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = river1.jpg; sourceTree = "<group>"; };
+		5B052EB22579E4C2000036CA /* river2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = river2.jpg; sourceTree = "<group>"; };
+		5B052EB52579F34C000036CA /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,14 @@
 				5B052E962579DB54000036CA /* SceneDelegate.swift */,
 				5B052E982579DB54000036CA /* ViewController.swift */,
 				5B052E9A2579DB54000036CA /* Main.storyboard */,
+				5B052EB52579F34C000036CA /* TimerViewController.swift */,
+				5B052EA92579E33E000036CA /* TableViewCell.swift */,
 				5B052E9D2579DB55000036CA /* Assets.xcassets */,
 				5B052E9F2579DB55000036CA /* LaunchScreen.storyboard */,
 				5B052EA22579DB55000036CA /* Info.plist */,
+				5B052EAC2579E4B3000036CA /* river3.jpg */,
+				5B052EAF2579E4BD000036CA /* river1.jpg */,
+				5B052EB22579E4C2000036CA /* river2.jpg */,
 			);
 			path = SpaghettiTimer;
 			sourceTree = "<group>";
@@ -124,8 +139,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B052EAD2579E4B3000036CA /* river3.jpg in Resources */,
+				5B052EB32579E4C2000036CA /* river2.jpg in Resources */,
 				5B052EA12579DB55000036CA /* LaunchScreen.storyboard in Resources */,
 				5B052E9E2579DB55000036CA /* Assets.xcassets in Resources */,
+				5B052EB02579E4BD000036CA /* river1.jpg in Resources */,
 				5B052E9C2579DB54000036CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B052EB62579F34C000036CA /* TimerViewController.swift in Sources */,
 				5B052E992579DB54000036CA /* ViewController.swift in Sources */,
+				5B052EAA2579E33E000036CA /* TableViewCell.swift in Sources */,
 				5B052E952579DB54000036CA /* AppDelegate.swift in Sources */,
 				5B052E972579DB54000036CA /* SceneDelegate.swift in Sources */,
 			);
