@@ -34,6 +34,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading th
         tableData.delegate = self
         tableData.dataSource = self
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        dataManager = appDelegate.persistentContainer.viewContext
         fetchData()
     }
     
@@ -75,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let savedText = alert.textFields![0] as UITextField
             self.timerArray.insert(STimer(name: (savedText.text ?? "default"), icon: "river1.jpg", totalTime: 0.0 ), at: location)
             
-            self.addData(name: savedText.text ?? "default", icon: "river1.jpg", recordedSessions: "", savedTime: 0.0, totalTime: 0.0)
+            self.addData(name: savedText.text ?? "default", icon: "river1.jpg", recordedSessions: "   ", savedTime: 0.0, totalTime: 0.0)
             self.tableData.reloadData()
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {action -> Void in })
