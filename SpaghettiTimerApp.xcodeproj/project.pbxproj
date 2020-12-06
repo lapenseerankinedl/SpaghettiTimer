@@ -10,10 +10,12 @@
 		5B06275D257D5FA1006660FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06275C257D5FA1006660FF /* AppDelegate.swift */; };
 		5B06275F257D5FA1006660FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06275E257D5FA1006660FF /* SceneDelegate.swift */; };
 		5B062761257D5FA1006660FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B062760257D5FA1006660FF /* ViewController.swift */; };
-		5B062764257D5FA1006660FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B062762257D5FA1006660FF /* Main.storyboard */; };
 		5B062767257D5FA1006660FF /* SpaghettiTimerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B062765257D5FA1006660FF /* SpaghettiTimerApp.xcdatamodeld */; };
 		5B062769257D5FA5006660FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B062768257D5FA5006660FF /* Assets.xcassets */; };
 		5B06276C257D5FA5006660FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B06276A257D5FA5006660FF /* LaunchScreen.storyboard */; };
+		5B275B83257D61D900E14F39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B275B82257D61D900E14F39 /* Main.storyboard */; };
+		5B275B87257D625300E14F39 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B275B86257D625300E14F39 /* TableViewCell.swift */; };
+		5B275B8A257D62B700E14F39 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B275B89257D62B700E14F39 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +23,13 @@
 		5B06275C257D5FA1006660FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B06275E257D5FA1006660FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B062760257D5FA1006660FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B062763257D5FA1006660FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B062766257D5FA1006660FF /* SpaghettiTimerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaghettiTimerApp.xcdatamodel; sourceTree = "<group>"; };
 		5B062768257D5FA5006660FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B06276B257D5FA5006660FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B06276D257D5FA5006660FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B275B82257D61D900E14F39 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5B275B86257D625300E14F39 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5B275B89257D62B700E14F39 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				5B06275C257D5FA1006660FF /* AppDelegate.swift */,
 				5B06275E257D5FA1006660FF /* SceneDelegate.swift */,
 				5B062760257D5FA1006660FF /* ViewController.swift */,
-				5B062762257D5FA1006660FF /* Main.storyboard */,
+				5B275B89257D62B700E14F39 /* TimerViewController.swift */,
+				5B275B82257D61D900E14F39 /* Main.storyboard */,
+				5B275B86257D625300E14F39 /* TableViewCell.swift */,
 				5B062768257D5FA5006660FF /* Assets.xcassets */,
 				5B06276A257D5FA5006660FF /* LaunchScreen.storyboard */,
 				5B06276D257D5FA5006660FF /* Info.plist */,
@@ -129,7 +135,7 @@
 			files = (
 				5B06276C257D5FA5006660FF /* LaunchScreen.storyboard in Resources */,
 				5B062769257D5FA5006660FF /* Assets.xcassets in Resources */,
-				5B062764257D5FA1006660FF /* Main.storyboard in Resources */,
+				5B275B83257D61D900E14F39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B275B87257D625300E14F39 /* TableViewCell.swift in Sources */,
 				5B062761257D5FA1006660FF /* ViewController.swift in Sources */,
 				5B062767257D5FA1006660FF /* SpaghettiTimerApp.xcdatamodeld in Sources */,
 				5B06275D257D5FA1006660FF /* AppDelegate.swift in Sources */,
+				5B275B8A257D62B700E14F39 /* TimerViewController.swift in Sources */,
 				5B06275F257D5FA1006660FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,14 +158,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B062762257D5FA1006660FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B062763257D5FA1006660FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B06276A257D5FA5006660FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
