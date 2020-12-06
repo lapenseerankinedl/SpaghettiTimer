@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
 class TimerViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var textViewDisplay: UITextView!
     
     var resetTime = 0
     var timer = Timer()
@@ -26,6 +29,10 @@ class TimerViewController: UIViewController {
     var buttonPressed = ""
     var currentTime = 0
     var hitOne = false
+    
+    var dataManager : NSManagedObjectContext!
+    var listArray = [NSManagedObject] ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +40,10 @@ class TimerViewController: UIViewController {
         labelDisplay.text = receivedString
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        dataManager = appDelegate.persistentContainer.viewContext
+        textViewDisplay.text?.removeAll()
+        fetchData()
     }
     
     @IBAction func workButtonPressed(_ sender: UIButton) {
@@ -103,6 +114,7 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+ 
     }
     
     @objc func updateTimer() {
@@ -130,6 +142,21 @@ class TimerViewController: UIViewController {
         })
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func fetchData() {
+        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "STimer")
+        do {
+            let result = try dataManager.fetch(fetchRequest)
+            listArray = result as! [NSManagedObject]
+            for item in listArray {
+                let name = item.value(forKey: "name") as! String
+                let recordedSession = item.value(forKey: "recordedSessions") as! String
+                textViewDisplay.text! += name + " " + recordedSession + ", "
+            }
+        } catch {
+            print("Error retrieving data")
+        }
     }
     
 }

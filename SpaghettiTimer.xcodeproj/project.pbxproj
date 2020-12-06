@@ -18,6 +18,7 @@
 		5B052EB02579E4BD000036CA /* river1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B052EAF2579E4BD000036CA /* river1.jpg */; };
 		5B052EB32579E4C2000036CA /* river2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B052EB22579E4C2000036CA /* river2.jpg */; };
 		5B052EB62579F34C000036CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B052EB52579F34C000036CA /* TimerViewController.swift */; };
+		5B2F56EB257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F56E9257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5B052EAF2579E4BD000036CA /* river1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = river1.jpg; sourceTree = "<group>"; };
 		5B052EB22579E4C2000036CA /* river2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = river2.jpg; sourceTree = "<group>"; };
 		5B052EB52579F34C000036CA /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		5B2F56EA257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaghettiTimerData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				5B052E942579DB54000036CA /* AppDelegate.swift */,
+				5B2F56E9257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodeld */,
 				5B052E962579DB54000036CA /* SceneDelegate.swift */,
 				5B052E982579DB54000036CA /* ViewController.swift */,
 				5B052E9A2579DB54000036CA /* Main.storyboard */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B052EB62579F34C000036CA /* TimerViewController.swift in Sources */,
+				5B2F56EB257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodeld in Sources */,
 				5B052E992579DB54000036CA /* ViewController.swift in Sources */,
 				5B052EAA2579E33E000036CA /* TableViewCell.swift in Sources */,
 				5B052E952579DB54000036CA /* AppDelegate.swift in Sources */,
@@ -359,6 +363,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B2F56E9257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B2F56EA257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodel */,
+			);
+			currentVersion = 5B2F56EA257C2E8B00562FAF /* SpaghettiTimerData.xcdatamodel */;
+			path = SpaghettiTimerData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B052E892579DB54000036CA /* Project object */;
 }
