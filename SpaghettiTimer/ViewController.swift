@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellID = "customCell"
     var selectedItem = ""
     var dataManager : NSManagedObjectContext!
-    var listArray = [NSManagedObject] ()
+    var listArray = [NSManagedObject]()
     
     struct STimer {
         var name: String = "Example timer"
@@ -91,9 +91,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.displayAlert(location: indexPath.row)
         })
         let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "Delete", handler: {(action: UITableViewRowAction, indexPath: IndexPath) in
-            self.mainArray.remove(at: indexPath.row)
-            self.detailArray.remove(at: indexPath.row)
-            self.imageArray.remove(at: indexPath.row)
+            let deleteItem = self.timerArray[indexPath.row].name
+            for item in listArray {
+                if item.value(forKey: "name") as! String == deleteItem {
+                    dataManager.delete(item)
+                }
+            }
+            do {
+                try self.dataManager.save()
+            } catch {
+                print("Error deleting data")
+            }                                                                                                            
+            self.timerArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         })
         return [deleteAction, addAcion]
