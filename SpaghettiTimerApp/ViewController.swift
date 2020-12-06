@@ -11,9 +11,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableData: UITableView!
     @IBOutlet weak var addButton: UIButton!
-    var mainArray = ["Shuttle bus", "Hierarchy", "Exchange"]
-    var detailArray = ["Worked: 0h0m", "Worked: 0h0m", "Worked: 0h0m"]
-    var imageArray = ["river1.jpg", "river1.jpg", "river1.jpg"]
+    var mainArray = ["Homework 1"]
+    //var detailArray = ["Worked: 0h25m"]
+    var imageArray = ["river1.jpg"]
     let cellID = "customCell"
     var selectedItem = ""
     override func viewDidLoad() {
@@ -31,7 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCell
         cell.mainText?.text = self.mainArray[indexPath.row]
-        cell.detailText?.text = self.detailArray[indexPath.row]
+        //cell.detailText?.text = self.detailArray[indexPath.row]
+        cell.detailText?.text = UserDefaults.string(forKey: "totalTime")
         cell.imageView?.image = UIImage(named: self.imageArray[indexPath.row])
         return cell
     }
@@ -58,8 +59,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addTextField(configurationHandler: {(textField) in textField.placeholder = "Timer name here"})
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {action -> Void in
             let savedText = alert.textFields![0] as UITextField
+            UserDefaults.standard.set(savedText.text ?? "default", forKey: "name")
+            UserDefaults.standard.set("Worked: 0h0m", forKey: "totalTime")
+            UserDefaults.standard.set("", forKey: "icon")                                                                 
             self.mainArray.insert(savedText.text ?? "default", at: location)
-            self.detailArray.insert("Worked: 0h0m", at: location)
+            //self.detailArray.insert("Worked: 0h0m", at: location)
             self.imageArray.insert("river1.jpg", at: location)
             self.tableData.reloadData()
         })
@@ -74,8 +78,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.displayAlert(location: indexPath.row)
         })
         let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "Delete", handler: {(action: UITableViewRowAction, indexPath: IndexPath) in
+            UserDefaults.standard.set("", forKey: "name")
+            UserDefaults.standard.set("", forKey: "totalTime")
+            UserDefaults.standard.set("", forKey: "icon")
             self.mainArray.remove(at: indexPath.row)
-            self.detailArray.remove(at: indexPath.row)
+            //self.detailArray.remove(at: indexPath.row)
             self.imageArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         })
@@ -84,6 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
+        self.displayAlert(location: 0)
     }
 }
 
