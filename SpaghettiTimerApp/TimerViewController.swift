@@ -84,8 +84,8 @@ class TimerViewController: UIViewController {
             showAlert(messageText: "Please choose a timer option: Work, Short Break, Long Break")
         }
         else {
-            time = myDatePicker.countDownDuration
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerViewController.updateTimer), userInfo: nil, repeats: true)
+            time = Int(myDatePicker.countDownDuration)
+            timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(TimerViewController.updateTimer), userInfo: nil, repeats: true)
         }
     }
     
@@ -119,7 +119,8 @@ class TimerViewController: UIViewController {
             showAlert(messageText: "Timer has finished")
             // save the time when it runs out
             // and print it to the screen
-            let selectedDate: String = dateFormatter.string(
+            let selectedDate: String = dateFormatter.string(for: myDatePicker.date) ?? "12/6/20"
+            
             saveData()
             
         }
@@ -139,10 +140,11 @@ class TimerViewController: UIViewController {
     
     func saveData() {
         let selectedDate: String = dateFormatter.string(from: myDatePicker.date)
-        let timeString = "0h" + (time/60) + "m"
+        let timeString = "0h" + String(time/60) + "m"
         let sessionString = selectedDate + "  " + buttonPressed + "  " + timeString
         UserDefaults.standard.set(timeString, forKey: "totalTime")
-        UserDefaults.standard.set(, forKey: "recordedSessions")
+        UserDefaults.standard.set(sessionString, forKey: "recordedSessions")
+        textViewDisplay.text = sessionString + "\n" + textViewDisplay.text
     }
     
 }

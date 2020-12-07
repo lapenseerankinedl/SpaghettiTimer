@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCell
         cell.mainText?.text = self.mainArray[indexPath.row]
         //cell.detailText?.text = self.detailArray[indexPath.row]
-        cell.detailText?.text = UserDefaults.string(forKey: "totalTime")
+        cell.detailText?.text = UserDefaults.standard.string(forKey: "totalTime")
         cell.imageView?.image = UIImage(named: self.imageArray[indexPath.row])
         return cell
     }
