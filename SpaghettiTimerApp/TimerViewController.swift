@@ -27,6 +27,8 @@ class TimerViewController: UIViewController {
     var buttonPressed = ""
     var currentTime = 0
     var hitOne = false
+    var date = ""
+    var time = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +46,7 @@ class TimerViewController: UIViewController {
             sBreakButton.backgroundColor = UIColor.white
             lBreakButton.tintColor = UIColor.blue
             lBreakButton.backgroundColor = UIColor.white
-            buttonPressed = "wButton"
+            buttonPressed = "Work"
         }
             
     }
@@ -57,7 +59,7 @@ class TimerViewController: UIViewController {
             workButton.backgroundColor = UIColor.white
             lBreakButton.tintColor = UIColor.blue
             lBreakButton.backgroundColor = UIColor.white
-            buttonPressed = "sButton"
+            buttonPressed = "SBreak"
         }
         
     }
@@ -70,7 +72,7 @@ class TimerViewController: UIViewController {
             sBreakButton.backgroundColor = UIColor.white
             workButton.tintColor = UIColor.blue
             workButton.backgroundColor = UIColor.white
-            buttonPressed = "lButton"
+            buttonPressed = "LBreak"
         }
         
     }
@@ -82,6 +84,7 @@ class TimerViewController: UIViewController {
             showAlert(messageText: "Please choose a timer option: Work, Short Break, Long Break")
         }
         else {
+            time = myDatePicker.countDownDuration
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerViewController.updateTimer), userInfo: nil, repeats: true)
         }
     }
@@ -116,7 +119,8 @@ class TimerViewController: UIViewController {
             showAlert(messageText: "Timer has finished")
             // save the time when it runs out
             // and print it to the screen
-            
+            let selectedDate: String = dateFormatter.string(
+            saveData()
             
         }
         if (myDatePicker.countDownDuration == 60) {
@@ -131,6 +135,14 @@ class TimerViewController: UIViewController {
         })
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func saveData() {
+        let selectedDate: String = dateFormatter.string(from: myDatePicker.date)
+        let timeString = "0h" + (time/60) + "m"
+        let sessionString = selectedDate + "  " + buttonPressed + "  " + timeString
+        UserDefaults.standard.set(timeString, forKey: "totalTime")
+        UserDefaults.standard.set(, forKey: "recordedSessions")
     }
     
 }
