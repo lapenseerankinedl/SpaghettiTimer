@@ -36,6 +36,7 @@ class TimerViewController: UIViewController {
         labelDisplay.text = receivedString
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
+        textViewDisplay.text = UserDefaults.standard.string(forKey: "recordedSessions")
     }
     
     @IBAction func workButtonPressed(_ sender: UIButton) {
